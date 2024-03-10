@@ -55,4 +55,4 @@
 
 ---
 
-<img src="https://i.imgur.com/y8ewE2M.gif" alt="demo de la solution" title="Démo de la solution - fichier Gif animé">
+![Démo de la solution modèle](https://github.com/582-4PA/h24-eval-ressources/blob/main/h24-tp1-demo-solution.gif)
