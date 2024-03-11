@@ -3,8 +3,6 @@
 
 >Si vous travaillez en équipe, les deux personnes doivent accepter les fichiers du TP sur *GitHub Classroom*.
 
->Vous travaillez ensuite chacun.e sur votre version de code, que ce soit dans l'environnement nuagique `Codespaces` ou localement (ou une combinaison des deux, en autant que vous faites vos fusions et synchronisations du code correctement).
-
 >Divisez le travail dans l'équipe de façon à simplifier/faciliter ces fusions (expérimentez, c'est le moment idéal !)
 
 ## Objectif/exigences généraux
@@ -17,7 +15,7 @@
 * Préférez le code *déclaratif* (ou *fonctionnel*, ou *expressif*) au lieu du code *impératif* partout où c'est possible
 
 ## Étapes à suivre
-1. Cliquez le bouton *Open in GitHub Codespaces* ou si vous préférez, *clonez* le dépôt sur votre machine locale
+1. Clonez le dépôt sur votre machine locale
 
 2. Un gabarit Vite est déjà fourni : installez les modules de base de l'appli (ou laissez le temps à `Codespaces` de finir l'installation :wink:)
 
@@ -49,7 +47,9 @@
 
 8. Synchronisez votre solution complétée avec le dépôt GitHub qui vous a été assigné lorsque vous avez accepté le travail (c'est le dépôt distant (*remote*) déjà défini dans votre projet)
 
-9. :bangbang: :warning: :x: NON, NON, et NON : pour ce travail, **NE DÉPLOYEZ PAS** votre solution sur `GitHub Pages` (sinon, risque de plagiat) :bangbang: :warning: :x:
+>ATTENTION : ne faites aucune synchronisation après la date limite de remise à moins que vous ne voulez en payer le prix (5% par jour de retard)
+
+:bangbang: :warning: :x: NON, NON, et NON : pour ce travail, **NE DÉPLOYEZ PAS** votre solution sur `GitHub Pages` (sinon, risque de plagiat) :bangbang: :warning: :x:
 
 ### Gardez une copie personnelle de votre travail : le dépôt de remise sur `582-4PA` pourrait être supprimé une fois la correction complétée et les notes publiées.
 
