@@ -1,9 +1,55 @@
 .Footer {
-  background-color: rgb(229, 229, 229);
-  border-top: 5px solid grey;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  p {
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+  }
+
+  .boutons-footer {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width:768px) {
+      flex-direction: row;
+      
+    }
+
+    button {
+      margin-bottom: 10px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0; 
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .supprimer {
+    margin-top: 20px;
+
+    // Media query pour les écrans de bureau
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
 }

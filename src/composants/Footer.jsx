@@ -1,7 +1,8 @@
-import "./Footer.scss";
-import Button from "@mui/material/Button";
+// Footer.jsx
+import React from 'react';
+import { Button } from '@mui/material'; // Importez le bouton MUI selon vos besoins
+import './Footer.scss';
 
-// Jouer avec flex-direction (order des éléments aussi pour les boutons)
 function Footer() {
   return (
     <div className="Footer">
