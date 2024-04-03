@@ -1,12 +1,14 @@
-import './Appli.scss';
+import "./Appli.scss";
+import ForumIcon from "@mui/icons-material/Forum";
+import Footer from "./Footer";
 
 function Appli() {
-
   return (
     <div className="Appli">
-      Gabrit React/Vite du cours 582-4PA
+      <ForumIcon className="icone-message">Forum</ForumIcon>
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default Appli;
