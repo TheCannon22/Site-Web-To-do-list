@@ -1,11 +1,17 @@
 import "./Appli.scss";
-import ForumIcon from "@mui/icons-material/Forum";
+import Header from "./Header";
+import InputDesTaches from "./InputDesTaches";
+import ListeDesTaches from "./ListeDesTaches";
 import Footer from "./Footer";
 
 function Appli() {
   return (
     <div className="Appli">
-      <ForumIcon className="icone-message">Forum</ForumIcon>
+      <Header />
+      <main className="Contenu">
+        <InputDesTaches />
+        <ListeDesTaches />
+      </main>
       <Footer />
     </div>
   );
