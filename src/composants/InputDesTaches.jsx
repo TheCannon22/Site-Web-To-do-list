@@ -3,7 +3,7 @@ import { TextField, Button } from "@mui/material";
 import { v4 as uuidv4 } from 'uuid';
 import "./InputDesTaches.scss";
 
-function InputDesTaches() {
+function InputDesTaches({ setTaches }) {
   const inputRef = useRef();
 
   const ajouterTache = () => {
@@ -17,6 +17,7 @@ function InputDesTaches() {
     const taches = JSON.parse(localStorage.getItem('taches')) || [];
     taches.push(nouvelleTache);
     localStorage.setItem('taches', JSON.stringify(taches));
+    setTaches(taches); 
     inputRef.current.value = '';
   };
 
