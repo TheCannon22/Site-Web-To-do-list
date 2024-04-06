@@ -1,4 +1,3 @@
-// Appli.jsx
 import React, { useState, useEffect } from 'react';
 import "./Appli.scss";
 import Header from "./Header";

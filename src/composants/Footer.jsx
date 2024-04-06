@@ -1,4 +1,3 @@
-// Footer.jsx
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import "./Footer.scss";
@@ -14,7 +13,7 @@ function Footer({ taches, setTaches, setFiltre }) {
 
   const filtrerTaches = filtre => {
     setFiltre(filtre);
-    setFiltreActif(filtre); // Met à jour le filtre actif
+    setFiltreActif(filtre);
   };
 
   const supprimerTachesCompletes = () => {

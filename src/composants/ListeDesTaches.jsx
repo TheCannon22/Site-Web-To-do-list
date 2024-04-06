@@ -1,6 +1,8 @@
-// ListeDesTaches.jsx
 import React from 'react';
 import { Button } from '@mui/material';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import { motion } from 'framer-motion';
 import './ListeDesTaches.scss';
 
 function ListeDesTaches({ taches, setTaches, filtre }) {
@@ -34,17 +36,23 @@ function ListeDesTaches({ taches, setTaches, filtre }) {
         <li>Vous n'avez aucune tâche à faire</li>
       ) : (
         tachesFiltrees.map(tache => (
-          <li key={tache.id} className="tache-item">
-            <Button color="primary" variant="contained" onClick={() => basculerEtatTache(tache.id)}>
+          <motion.li 
+            key={tache.id}
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.3, type: 'spring', stiffness: 100 }} 
+            className="tache-item"
+          >
+            <AssignmentTurnedInIcon color="primary" variant="contained" onClick={() => basculerEtatTache(tache.id)}>
               {tache.complet ? 'Incompléter' : 'Compléter'}
-            </Button>
+            </AssignmentTurnedInIcon>
             <span style={{ color: tache.complet ? 'green' : 'black' }}>
               {tache.texte} - {tache.date} {tache.heure}
             </span>
-            <Button color="error" variant="contained" onClick={() => supprimerTache(tache.id)}>
+            <DeleteForeverIcon color="error" variant="contained" onClick={() => supprimerTache(tache.id)}>
               Supprimer
-            </Button>
-          </li>
+            </DeleteForeverIcon>
+          </motion.li>
         ))
       )}
     </ul>
