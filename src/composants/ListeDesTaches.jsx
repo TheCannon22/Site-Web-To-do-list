@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ListeDesTaches.scss';
 
 function ListeDesTaches() {
+  const [taches, setTaches] = useState([]);
+
+  useEffect(() => {
+    const tachesLocalStorage = localStorage.getItem('taches');
+    if (tachesLocalStorage) {
+      setTaches(JSON.parse(tachesLocalStorage));
+    }
+  }, []);
+
   return (
     <ul className="Liste-des-taches">
-      <li className="tache-item">Tâche 1</li>
-      <li className="tache-item">Tâche 2</li>
+      {taches.map((tache) => (
+        <li key={tache.id} className="tache-item">
+          {tache.texte} - {tache.date} {tache.heure} - {tache.complet ? 'Complétée' : 'Active'}
+        </li>
+      ))}
     </ul>
   );
 }
