@@ -1,32 +1,30 @@
 // Footer.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { useState, useEffect } from "react";
 import "./Footer.scss";
 
-function Footer() {
+function Footer({ taches, setTaches, setFiltre }) {
   const [tachesActives, setTachesActives] = useState(0);
 
   useEffect(() => {
-    const taches = JSON.parse(localStorage.getItem('taches')) || [];
-    const tachesActives = taches.filter(tache => !tache.complet).length;
-    setTachesActives(tachesActives);
-  }, []);
+    const tachesActivesCount = taches.filter(tache => !tache.complet).length;
+    setTachesActives(tachesActivesCount);
+  }, [taches]);
 
-  useEffect(() => {
-    const handleStorageChange = () => {
-      const taches = JSON.parse(localStorage.getItem('taches')) || [];
-      const tachesActives = taches.filter(tache => !tache.complet).length;
-      setTachesActives(tachesActives);
-    };
+  const filtrerTaches = filtre => {
+    setFiltre(filtre);
+  };
 
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, []);
+  const supprimerTachesCompletes = () => {
+    const nouvellesTaches = taches.filter(tache => !tache.complet);
+    setTaches(nouvellesTaches);
+    localStorage.setItem('taches', JSON.stringify(nouvellesTaches));
+  };
+
   return (
     <div className="Footer">
       <p>
-        <b> {tachesActives} tâches actives</b>
+        <b>{tachesActives} tâches actives</b>
       </p>
       <div className="boutons-footer">
         <Button
@@ -34,6 +32,7 @@ function Footer() {
           variant="contained"
           disableElevation
           color="success"
+          onClick={() => filtrerTaches('toutes')}
         >
           Toutes
         </Button>
@@ -42,20 +41,26 @@ function Footer() {
           variant="contained"
           disableElevation
           color="success"
+          onClick={() => filtrerTaches('completes')}
         >
-          Complétés
+          Complétées
         </Button>
         <Button
           size="small"
           variant="contained"
           disableElevation
           color="success"
+          onClick={() => filtrerTaches('actives')}
         >
           Actives
         </Button>
       </div>
       <div className="supprimer">
-        <Button color="error" variant="contained">
+        <Button
+          color="error"
+          variant="contained"
+          onClick={supprimerTachesCompletes}
+        >
           Supprimer Complétées
         </Button>
       </div>
