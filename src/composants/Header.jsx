@@ -1,13 +1,14 @@
 import React from "react";
-import ForumIcon from "@mui/icons-material/Forum";
+import AlbumIcon from '@mui/icons-material/Album';
 import "./Header.scss";
 
 function Header() {
   return (
     <header className="Header">
-      <ForumIcon className="icone-message" fontSize="inherit">
+      <div className="logo">Bienvenue dans notre site web!</div>
+      <AlbumIcon className="icone-message" fontSize="large">
         Forum
-      </ForumIcon>
+      </AlbumIcon>
     </header>
   );
 }

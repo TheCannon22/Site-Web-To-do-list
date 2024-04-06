@@ -1,3 +1,17 @@
+.Liste-des-taches {
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+
+  @media (min-width: 768px) {
+    max-width: 800px;
+  }
+}
+
+.Liste-des-taches > li{
+  text-align: center;
+}
+
 .tache-item {
   width: 100%;
   padding: 10px;
@@ -12,19 +26,5 @@
     width: 90%;
     flex-direction: row;
     justify-content: space-between;
-  }
-}
-
-.Liste-des-taches {
-  padding: 0;
-  margin: 0 auto;
-
-  
-
-  list-style-type: none;
-
-  @media (min-width: 768px) {
-    max-width: 800px;
-    
   }
 }
