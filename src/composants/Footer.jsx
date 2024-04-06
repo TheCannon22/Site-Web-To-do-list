@@ -7,8 +7,8 @@ function Footer({ taches, setTaches, setFiltre }) {
   const [filtreActif, setFiltreActif] = useState('toutes');
 
   useEffect(() => {
-    const tachesActivesCount = taches.filter(tache => !tache.complet).length;
-    setTachesActives(tachesActivesCount);
+    const nombreDeTachesActives = taches.filter(tache => !tache.complet).length;
+    setTachesActives(nombreDeTachesActives);
   }, [taches]);
 
   const filtrerTaches = filtre => {

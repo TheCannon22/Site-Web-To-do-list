@@ -36,11 +36,11 @@ function ListeDesTaches({ taches, setTaches, filtre }) {
         <li>Vous n'avez aucune tâche à faire</li>
       ) : (
         tachesFiltrees.map(tache => (
-          <motion.li 
+          <motion.li
             key={tache.id}
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.3, type: 'spring', stiffness: 100 }} 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, type: 'spring', stiffness: 100 }}
             className="tache-item"
           >
             <AssignmentTurnedInIcon color="primary" variant="contained" onClick={() => basculerEtatTache(tache.id)}>

@@ -1,44 +1,43 @@
 .Connexion {
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    background-color: azure;
-    align-items: center;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+  align-items: center;
+}
+
+.bouton-connexion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #979797;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bouton-connexion:hover {
+  background-color: #0056b3;
+}
+
+.bouton-connexion .MuiAvatar-root {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
   .bouton-connexion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    background-color: #979797;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
   }
-  
-  .bouton-connexion:hover {
-    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .custom-button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
-  .bouton-connexion .MuiAvatar-root {
-    margin-right: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .bouton-connexion {
-      font-size: 16px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .custom-button {
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-  }
-  
+}

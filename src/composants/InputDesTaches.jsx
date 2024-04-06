@@ -17,7 +17,7 @@ function InputDesTaches({ setTaches }) {
     const taches = JSON.parse(localStorage.getItem('taches')) || [];
     taches.push(nouvelleTache);
     localStorage.setItem('taches', JSON.stringify(taches));
-    setTaches(taches); 
+    setTaches(taches);
     inputRef.current.value = '';
   };
 
