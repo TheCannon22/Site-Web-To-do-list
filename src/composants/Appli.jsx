@@ -4,6 +4,7 @@ import Header from "./Header";
 import InputDesTaches from "./InputDesTaches";
 import ListeDesTaches from "./ListeDesTaches";
 import Footer from "./Footer";
+import Connexion from "./Connexion";
 
 function Appli() {
   const [taches, setTaches] = useState([]);
@@ -18,6 +19,7 @@ function Appli() {
 
   return (
     <div className="Appli">
+      <Connexion />
       <Header />
       <main className="Contenu">
         <InputDesTaches setTaches={setTaches} />
