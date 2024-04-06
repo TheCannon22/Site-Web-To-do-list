@@ -5,6 +5,7 @@ import "./Footer.scss";
 
 function Footer({ taches, setTaches, setFiltre }) {
   const [tachesActives, setTachesActives] = useState(0);
+  const [filtreActif, setFiltreActif] = useState('toutes');
 
   useEffect(() => {
     const tachesActivesCount = taches.filter(tache => !tache.complet).length;
@@ -13,6 +14,7 @@ function Footer({ taches, setTaches, setFiltre }) {
 
   const filtrerTaches = filtre => {
     setFiltre(filtre);
+    setFiltreActif(filtre); // Met à jour le filtre actif
   };
 
   const supprimerTachesCompletes = () => {
@@ -31,7 +33,7 @@ function Footer({ taches, setTaches, setFiltre }) {
           size="small"
           variant="contained"
           disableElevation
-          color="success"
+          color={filtreActif === 'toutes' ? "primary" : "success"}
           onClick={() => filtrerTaches('toutes')}
         >
           Toutes
@@ -40,7 +42,7 @@ function Footer({ taches, setTaches, setFiltre }) {
           size="small"
           variant="contained"
           disableElevation
-          color="success"
+          color={filtreActif === 'completes' ? "primary" : "success"}
           onClick={() => filtrerTaches('completes')}
         >
           Complétées
@@ -49,7 +51,7 @@ function Footer({ taches, setTaches, setFiltre }) {
           size="small"
           variant="contained"
           disableElevation
-          color="success"
+          color={filtreActif === 'actives' ? "primary" : "success"}
           onClick={() => filtrerTaches('actives')}
         >
           Actives
