@@ -31,7 +31,10 @@ function ListeDesTaches() {
 
   return (
     <ul className="Liste-des-taches">
-      {taches.map((tache) => (
+    {taches.length === 0 ? (
+      <li>Vous n'avez aucune tâche à faire</li>
+    ) : (
+      taches.map((tache) => (
         <li key={tache.id} className="tache-item">
           <Button color="primary" variant="contained" onClick={() => basculerEtatTache(tache.id)}>
             {tache.complet ? 'Incompléter' : 'Compléter'}
@@ -43,8 +46,9 @@ function ListeDesTaches() {
             Supprimer
           </Button>
         </li>
-      ))}
-    </ul>
+      ))
+    )}
+  </ul>
   );
 }
 

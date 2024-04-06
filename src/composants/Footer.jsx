@@ -1,13 +1,32 @@
 // Footer.jsx
 import React from "react";
-import { Button } from "@mui/material"; // Importez le bouton MUI selon vos besoins
+import { Button } from "@mui/material";
+import { useState, useEffect } from "react";
 import "./Footer.scss";
 
 function Footer() {
+  const [tachesActives, setTachesActives] = useState(0);
+
+  useEffect(() => {
+    const taches = JSON.parse(localStorage.getItem('taches')) || [];
+    const tachesActives = taches.filter(tache => !tache.complet).length;
+    setTachesActives(tachesActives);
+  }, []);
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const taches = JSON.parse(localStorage.getItem('taches')) || [];
+      const tachesActives = taches.filter(tache => !tache.complet).length;
+      setTachesActives(tachesActives);
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
   return (
     <div className="Footer">
       <p>
-        <b>tâches actives</b>
+        <b> {tachesActives} tâches actives</b>
       </p>
       <div className="boutons-footer">
         <Button
