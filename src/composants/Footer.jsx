@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import "./Footer.scss";
+import { motion } from "framer-motion";
 
 function Footer({ taches, setTaches, setFiltre }) {
   const [tachesActives, setTachesActives] = useState(0);
@@ -30,6 +31,11 @@ function Footer({ taches, setTaches, setFiltre }) {
         <b>{tachesActives} tâches actives</b>
       </p>
       <div className="boutons-footer">
+      <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+      >
         <Button
           size="medium"
           variant="contained"
@@ -39,6 +45,12 @@ function Footer({ taches, setTaches, setFiltre }) {
         >
           Toutes
         </Button>
+        </motion.div>
+      <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+      >
         <Button
           size="medium"
           variant="contained"
@@ -48,6 +60,12 @@ function Footer({ taches, setTaches, setFiltre }) {
         >
           Complétées
         </Button>
+        </motion.div>
+        <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+      >
         <Button
           size="medium"
           variant="contained"
@@ -57,6 +75,7 @@ function Footer({ taches, setTaches, setFiltre }) {
         >
           Actives
         </Button>
+        </motion.div>
       </div>
       <div className="supprimer">
         <Button
