@@ -4,22 +4,24 @@ import "./Footer.scss";
 
 function Footer({ taches, setTaches, setFiltre }) {
   const [tachesActives, setTachesActives] = useState(0);
-  const [filtreActif, setFiltreActif] = useState('toutes');
+  const [filtreActif, setFiltreActif] = useState("toutes");
 
   useEffect(() => {
-    const nombreDeTachesActives = taches.filter(tache => !tache.complet).length;
+    const nombreDeTachesActives = taches.filter(
+      (tache) => !tache.complet
+    ).length;
     setTachesActives(nombreDeTachesActives);
   }, [taches]);
 
-  const filtrerTaches = filtre => {
+  const filtrerTaches = (filtre) => {
     setFiltre(filtre);
     setFiltreActif(filtre);
   };
 
   const supprimerTachesCompletes = () => {
-    const nouvellesTaches = taches.filter(tache => !tache.complet);
+    const nouvellesTaches = taches.filter((tache) => !tache.complet);
     setTaches(nouvellesTaches);
-    localStorage.setItem('taches', JSON.stringify(nouvellesTaches));
+    localStorage.setItem("taches", JSON.stringify(nouvellesTaches));
   };
 
   return (
@@ -29,36 +31,37 @@ function Footer({ taches, setTaches, setFiltre }) {
       </p>
       <div className="boutons-footer">
         <Button
-          size="small"
+          size="medium"
           variant="contained"
           disableElevation
-          color={filtreActif === 'toutes' ? "primary" : "success"}
-          onClick={() => filtrerTaches('toutes')}
+          color={filtreActif === "toutes" ? "info" : "success"}
+          onClick={() => filtrerTaches("toutes")}
         >
           Toutes
         </Button>
         <Button
-          size="small"
+          size="medium"
           variant="contained"
           disableElevation
-          color={filtreActif === 'completes' ? "primary" : "success"}
-          onClick={() => filtrerTaches('completes')}
+          color={filtreActif === "completes" ? "info" : "success"}
+          onClick={() => filtrerTaches("completes")}
         >
           Complétées
         </Button>
         <Button
-          size="small"
+          size="medium"
           variant="contained"
           disableElevation
-          color={filtreActif === 'actives' ? "primary" : "success"}
-          onClick={() => filtrerTaches('actives')}
+          color={filtreActif === "actives" ? "info" : "success"}
+          onClick={() => filtrerTaches("actives")}
         >
           Actives
         </Button>
       </div>
       <div className="supprimer">
         <Button
-          color="error"
+          size="large"
+          color="warning"
           variant="contained"
           onClick={supprimerTachesCompletes}
         >

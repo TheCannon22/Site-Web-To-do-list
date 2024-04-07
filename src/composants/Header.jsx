@@ -1,13 +1,14 @@
 import React from "react";
-import AlbumIcon from '@mui/icons-material/Album';
+import AlbumIcon from "@mui/icons-material/Album";
+import AddTaskIcon from "@mui/icons-material/AddTask";
 import "./Header.scss";
 
 function Header() {
   return (
     <header className="Header">
-      <AlbumIcon className="icone-message" fontSize="large">
-        Forum
-      </AlbumIcon>
+      <AddTaskIcon className="icone" fontSize="large">
+        TaskIcon
+      </AddTaskIcon>
     </header>
   );
 }

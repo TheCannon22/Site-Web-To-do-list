@@ -1,5 +1,17 @@
+// Le root n'est pas fonctionnel mais je le garde pour avoir mes couleurs ici.
+
+.root {
+  --couleur-fond-fonce: #313b2e;
+  --couleur-vert-pale: #bac8b8;
+  --couleur-vert-fonce: #4b6346;
+  --couleur-blanc-pale: #f5faf5;
+  --couleur-gris-pale: #ccd4cc;
+}
+
 .Appli {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  font-family: "Roboto", sans-serif;
 }

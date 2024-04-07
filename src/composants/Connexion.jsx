@@ -1,12 +1,13 @@
-import React from 'react';
-import Avatar from '@mui/material/Avatar';
-import './Connexion.scss';
+import React from "react";
+import Avatar from "@mui/material/Avatar";
+import "./Connexion.scss";
 
 function Connexion() {
   return (
     <header className="Connexion">
       <div className="contenu-au-milieu">
-        <h2>Site web fait par Alexander Rankov et Gabrielle Pelletier</h2>
+        <h1>La liste To-Do | &nbsp;</h1>
+        <h3> Alexander Rankov et Gabrielle Pelletier</h3>
       </div>
       <div className="bouton-login">
         <button className="bouton-connexion">
@@ -16,6 +17,6 @@ function Connexion() {
       </div>
     </header>
   );
-};
+}
 
 export default Connexion;

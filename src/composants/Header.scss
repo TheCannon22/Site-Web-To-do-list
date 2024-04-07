@@ -1,6 +1,66 @@
 .Header {
   width: 100%;
-  background-color: #fff;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   text-align: center;
+}
+
+.icone {
+  font-size: 60pt !important;
+
+  @media (max-width: 768px) {
+    font-size: 50pt !important;
+  }
+
+  color: #2e6923;
+
+  padding: 1%;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    0deg,
+    #d8eed9,
+    #a0cbd7,
+    #bbdbbd,
+    #b7d5ae,
+    #ddc19f
+  );
+  background-size: 500% 500%;
+
+  -webkit-animation: AnimationName 10s ease-in-out infinite;
+  -moz-animation: AnimationName 10s ease-in-out infinite;
+  animation: AnimationName 10s ease-in-out infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 26% 0%;
+  }
+  50% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 26% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 26% 0%;
+  }
+  50% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 26% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 26% 0%;
+  }
+  50% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 26% 0%;
+  }
 }

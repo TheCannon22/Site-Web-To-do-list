@@ -1,3 +1,21 @@
-*, *::before, *::after {
+// Le root n'est pas fonctionnel mais je le garde pour avoir mes couleurs ici.
+
+.root {
+  --couleur-fond-fonce: #080c07;
+  --couleur-vert-pale: #bac8b8;
+  --couleur-vert-fonce: #103709;
+  --couleur-blanc-pale: #f5faf5;
+  --couleur-gris-pale: #ccd4cc;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body {
+  margin-top: 0;
+  background-color: #f5faf5;
+  // margin: 0;
 }
