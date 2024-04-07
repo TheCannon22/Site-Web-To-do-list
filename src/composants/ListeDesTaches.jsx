@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./ListeDesTaches.scss";
 
 function ListeDesTaches({ taches, setTaches, filtre }) {
@@ -32,41 +32,51 @@ function ListeDesTaches({ taches, setTaches, filtre }) {
 
   return (
     <ul className="Liste-des-taches">
-      {tachesFiltrees.length === 0 ? (
-        <li>Vous n'avez aucune tâche ici! xP</li>
-      ) : (
-        tachesFiltrees.map((tache) => (
-          <motion.li
-            key={tache.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
-            className="tache-item"
-          >
-            <AssignmentTurnedInIcon
-              color="info"
-              variant="contained"
-              onClick={() => basculerEtatTache(tache.id)}
+      <AnimatePresence>
+        {tachesFiltrees.length === 0 ? (
+          <li>Vous n'avez aucune tâche ici! xP</li>
+        ) : (
+          tachesFiltrees.map((tache) => (
+            <motion.li
+              key={tache.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, type: "spring", stiffness: 100 }}
+              exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.5 } }}
+              className="tache-item"
             >
-              {tache.complet ? "Incompléter" : "Compléter"}
-            </AssignmentTurnedInIcon>
-            <span
-              style={{
-                color: tache.complet ? "#acb4ac" : "black",
-              }}
-            >
-              {tache.texte} - {tache.date} {tache.heure}
-            </span>
-            <DeleteForeverIcon
-              color="warning"
-              variant="contained"
-              onClick={() => supprimerTache(tache.id)}
-            >
-              Supprimer
-            </DeleteForeverIcon>
-          </motion.li>
-        ))
-      )}
+              <AssignmentTurnedInIcon
+                color="info"
+                variant="contained"
+                onClick={() => basculerEtatTache(tache.id)}
+              >
+                {tache.complet ? "Incompléter" : "Compléter"}
+              </AssignmentTurnedInIcon>
+              <span
+                style={{
+                  color: tache.complet ? "#acb4ac" : "black",
+                }}
+              >
+                {tache.texte} - {tache.date} {tache.heure}
+              </span>
+              <motion.div
+                key={tache.id}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+              >
+                <DeleteForeverIcon
+                  color="warning"
+                  variant="contained"
+                  onClick={() => supprimerTache(tache.id)}
+                >
+                  Supprimer
+                </DeleteForeverIcon>
+              </motion.div>
+            </motion.li>
+          ))
+        )}
+      </AnimatePresence>
     </ul>
   );
 }
